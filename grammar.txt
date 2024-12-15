@@ -1,0 +1,11 @@
+GetTab ::= ' ' | GetFuncWithNoArg ';'
+GetFuncWithNoArg ::= [tableFuncWithNoArg] | GetFuncWithOneArg
+GetFuncWithOneArg ::= [tableFuncWithOneArg] '(' GetCompare ')' | GetFuncWithTwoArg
+GetFuncWithTwoArg ::= [tableFuncWithTwoArg] '(' GetCompare ')' '{' GetFuncWithNoArg '}' | GetCompare
+GetCompare ::= GetEquality {['<=', '>=', '!=', '==', '<', '>', '='] GetEquality}*
+GetEquality ::= GetSum {'=' GetSum}*
+GetSum ::= GetMul {['+', '-'] GetMul}*
+GetMul ::= GetBranches {['+', '-'] GetBranches}*
+GetBranches ::= '(' GetSum ')' | GetVariable
+GetVariable ::= [varTable] | GetNumber
+GetNumber ::= ['0'-'9']+
