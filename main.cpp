@@ -1,7 +1,7 @@
-#include "token.h"
+#include "tokens.h"
 
 int main ()
 {
-    makeTokens ("9 + 1;");
+    tokenDump (dispetcher ("file.txt"));
     return 0;
 }

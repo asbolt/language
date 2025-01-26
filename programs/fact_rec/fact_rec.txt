@@ -1,0 +1,22 @@
+celoe fact (celoe n);
+
+celoe main ()
+{
+    celoe n = 0;
+    napechatatStroky ("Введите число n:");
+    vvesti (n);
+
+    celoe result = fact (n);
+
+    napechatatChislo (result);
+}
+
+celoe fact (celoe n)
+{
+    esli (n > 0)
+    {
+        vernut n * fact(n-1);
+    }
+    
+    vernut 1;
+}

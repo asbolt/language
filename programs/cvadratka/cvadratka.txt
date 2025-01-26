@@ -1,0 +1,26 @@
+celoe main ()
+{
+    celoe a = 0, b = 0, c = 0;
+    napechatatStroky ("Введите коэффициенты:");
+    vvesti (a);
+    vvesti (b);
+    vvesti (c);
+
+    celoe D = b*b - 4*a*c; 
+
+    esli (D < 0)
+    {
+        napechatatStroky ("Нет корней");
+        vernut 0;
+    }
+
+    celoe d = cvdrcrn(D);
+    celoe x1 = (-b - d)/(2*a);
+    celoe x2 = (-b + d)/(2*a);
+    napechatatStroky ("Корни: x1 =");
+    napechatatChislo (x1);
+    napechatatStroky (", x2 =");
+    napechatatChislo (x2);
+    
+    vernut 0;
+}

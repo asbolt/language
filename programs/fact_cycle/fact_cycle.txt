@@ -1,0 +1,16 @@
+celoe main ()
+{
+    celoe n = 0;
+    napechatatStroky ("Введите число n:");
+    vvesti (n);
+
+    celoe result = 1;
+    celoe i = 0;
+    poka (i < n)
+    {
+        result = result * (i + 1);
+        i++;
+    }
+
+    napechatatChislo (result);
+}
