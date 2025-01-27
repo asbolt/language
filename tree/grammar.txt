@@ -5,7 +5,7 @@ GetFuncWithTwoArg ::= [tableFuncWithTwoArg] '(' GetCompare ')' '{' GetFuncWithNo
 GetCompare ::= GetEquality {['<=', '>=', '!=', '==', '<', '>', '='] GetEquality}*
 GetEquality ::= GetSum {'=' GetSum}*
 GetSum ::= GetMul {['+', '-'] GetMul}*
-GetMul ::= GetBranches {['+', '-'] GetBranches}*
+GetMul ::= GetBranches {['*', '/'] GetBranches}*
 GetBranches ::= '(' GetSum ')' | GetVariable
 GetVariable ::= [varTable] | GetNumber
 GetNumber ::= ['0'-'9']+

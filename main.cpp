@@ -1,7 +1,12 @@
-#include "tokens.h"
+#include "h_files/tokens.h"
+#include "h_files/rekursivnaya_eblya_materi.h"
 
 int main ()
 {
-    tokenDump (dispetcher ("file.txt"));
+    Tokens *tokens = dispetcher ("file.txt");
+    tokenDump (tokens);
+    int p = 0;
+    Node *node = GetEnd (tokens, &p);
+    treeDump (node);
     return 0;
 }

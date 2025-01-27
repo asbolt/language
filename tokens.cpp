@@ -1,4 +1,4 @@
-#include "tokens.h"
+#include "h_files/tokens.h"
 
 Tokens *dispetcher (const char *programFile)
 {
@@ -29,18 +29,21 @@ Tokens *dispetcher (const char *programFile)
     if (tokens->value == NULL)
         return NULL;
 
-    Names newNames = {};
+    Names *newNames = (Names *)calloc (1, sizeof(Names));
+    if (newNames == NULL)
+        return NULL;
 
     for (int i = 0; i < MAX_NAME_AMOUNT; i++)
     {
-        newNames.names[i].name = (char *)calloc (MAX_NAME_SIZE, sizeof(char));
-        if (newNames.names[i].name == NULL)
+        newNames->names[i].name = (char *)calloc (MAX_NAME_SIZE, sizeof(char));
+        if (newNames->names[i].name == NULL)
             return NULL;
     }
 
-    makeTokens (fileSize, buffer, tokens, &newNames);
+    makeTokens (fileSize, buffer, tokens, newNames);
 
     free (buffer);
+    tokens->newNames = newNames;
     return tokens;
 }
 

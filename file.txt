@@ -1,1 +1,2 @@
-hhh 7 - 0 hhh a = a
+celoeV a = 1 ;
+napechatatChislo (a);
